@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Slabo 27px', serif;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.nav {
+  height: 35px;
+  text-align: right;
+}
+
+.menuContainer {
+  margin-right: 10px;
+  padding-top: 4px;
+}
+.listDropButton {
+  font-size: 20px;
+  color: navy;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.listDropButton:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.hero {
+  height: 160px;
+  text-align: center;
+
+}
+
+.heroText {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 50px;
+  color: navy;
+  padding-top: 50px
+}
+
+.listMenuContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 80vw;
+  height: 500px;
+  margin: 0 auto;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.listButtonContainer {
+  width: 29%;
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-color: darkgray;
+  text-align: center;
+  line-height: 150px;
+  font-size: 30px;
+  vertical-align: middle;
+  border-radius: 10px;
+  height: 150px;
+  transition: all 0.5s ease-in-out;
+}
+
+.listButtonContainer:hover {
+  background: lightblue;
+  box-shadow: 3px 3px 10px 1px lightgray;
+
+}
