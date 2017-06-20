@@ -44,34 +44,61 @@ body {
 }
 
 .listMenuContainer {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: flex-start;
-  width: 80vw;
+  text-align: center;
+  width: 92vw;
   height: 500px;
   margin: 0 auto;
-  justify-content: space-around;
   margin-top: 10px;
 }
 
 .listButtonContainer {
-  width: 29%;
-  display: block;
+  width: 95%;
   text-decoration: none;
+  display: block;
   color: white;
   background-color: darkgray;
   text-align: center;
+  margin: 0 auto;
   line-height: 150px;
   font-size: 30px;
   vertical-align: middle;
   border-radius: 10px;
   height: 150px;
   transition: all 0.5s ease-in-out;
+  margin-top: 10px;
 }
 
 .listButtonContainer:hover {
   background: lightblue;
   box-shadow: 3px 3px 10px 1px lightgray;
 
+}
+
+@media screen and (max-width:  490px) {
+
+}
+
+@media screen and (min-width:  491px) {
+  .listMenuContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 90vw;
+  }
+
+  .listButtonContainer {
+    width: 43%;
+  }
+}
+
+@media screen and (min-width:  850px) {
+  .listMenuContainer {
+    width: 80vw;
+  }
+
+  .listButtonContainer {
+    width: 29%;
+  }
 }
