@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>A Packing List App</title>
+    <title>{{THE TITLE OF THE LIST}}</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -12,21 +12,118 @@
     <div class="nav">
       <div class="menuContainer">
         <span class="listDropButton">About</span>
-        <span class="listDropButton">Packing Lists</span>
+        <a href="index.html"><span class="listDropButton">Home</span></a>
         <span class="listDropButton">Log In</span>
       </div>
     </div>
     <div class="hero">
-      <div class="heroText">Packing List App</div>
+      <div class="heroText">{{the title of the list is much longer than we expected it to be}}</div>
     </div>
-    <div class="listMenuContainer">
-        <a href="" class="listButtonContainer" ><div>List One</div></a>
-        <a href="" class="listButtonContainer" ><div>List Two</div></a>
-        <a href="" class="listButtonContainer" ><div>List Three</div></a>
-        <a href="" class="listButtonContainer" ><div>List Four</div></a>
-        <a href="" class="listButtonContainer" ><div>List Five</div></a>
-        <a href="" class="listButtonContainer" ><div>List Six</div></a>
+
+    <div class="listContainer">
+      <h3 class="sectionHeader">Unpacked Items</h3>
+      <div class="listItem">
+        <div class="checkAndTextContainer">
+          <div class="checkboxContainer">
+            <p>
+              Mark it Packed?
+            </p>
+          </div>
+          <div class="listItemText">
+            <p>
+              An Item that has a really long name just to see what happens
+            </p>
+          </div>
+        </div>
+        <div class="buttonsContainer">
+          <div class="itemButtonContainer editButtonContainer">
+            <p>
+              Edit
+            </p>
+          </div>
+          <div class="itemButtonContainer removeButtonContainer">
+            <p>
+              Delete
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="listItem">
+        <div class="checkAndTextContainer">
+          <div class="checkboxContainer">
+            <p>
+              Mark it Packed?
+            </p>
+          </div>
+          <div class="listItemText">
+            <p>
+              An Item that has a really long name just to see what happens
+            </p>
+          </div>
+        </div>
+        <div class="buttonsContainer">
+          <div class="itemButtonContainer editButtonContainer">
+            <p>
+              Edit
+            </p>
+          </div>
+          <div class="itemButtonContainer removeButtonContainer">
+            <p>
+              Delete
+            </p>
+          </div>
+        </div>
+      </div>
+
+    <!---new list item---->
+    <h3 class="sectionHeader">Add an Item</h3>
+    <div class="listItem newListItem">
+      <div class="listItemText newListItemText">
+        <input type="text" placeholder="New Item" />
+      </div>
+      <div class="buttonsContainer">
+        <div class="itemButtonContainer addButtonContainer">
+          <p>
+            Add
+          </p>
+        </div>
+      </div>
     </div>
+
+    <!---Completed list---->
+    <h3 class="sectionHeader">Packed Items</h3>
+    <div class="listItem completedListItem">
+      <div class="listItemText completedListItemText">
+        <p>
+          An Item has been packed and it has a really long name that might screw a lot of things up
+        </p>
+      </div>
+      <div class="buttonsContainer">
+        <div class="checkboxContainer">
+          <p>
+            Oops, unpack
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="listItem completedListItem">
+      <div class="listItemText completedListItemText">
+        <p>
+          An Item has been packed and it has a really long name that might screw a lot of things up
+        </p>
+      </div>
+      <div class="buttonsContainer">
+        <div class="checkboxContainer">
+          <p>
+            Oops, unpack
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 
   </body>
 </html>
