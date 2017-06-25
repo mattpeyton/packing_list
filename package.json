@@ -1,0 +1,19 @@
+{
+  "name": "packlist",
+  "version": "1.0.0",
+  "description": "a packing list app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattpeyton/packing_list.git"
+  },
+  "author": "Matt Peyton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattpeyton/packing_list/issues"
+  },
+  "homepage": "https://github.com/mattpeyton/packing_list#readme"
+}
