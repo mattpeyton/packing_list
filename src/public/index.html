@@ -25,7 +25,8 @@
       <form id="newListForm">
         <label for="listName">Name of List</label>
         <input type="text" id="listName" name="listName" placeholder="ex:Business Trip" />
-        <button id="newListSubmitButton">Create List</button>
+        <button id="newListSubmitButton" onclick="submitNewList()">Create List</button>
+        <button id="cancelNewListForm">Cancel</button>
       </form>
     </div>
     <div class="listMenuContainer">
@@ -42,14 +43,9 @@
     {{/each}}
   </script>
   <script>
-  $(document).ready(function() {
-    refreshButtons();
-  });
-  </script>
-  <script>
-    $("#newListAdd").click(function(){
-      $("#newListForm").toggle();
-    });
+    $(document).ready(function(){
+      refreshButtons();
+    })
   </script>
   </body>
 </html>

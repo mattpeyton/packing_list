@@ -18,7 +18,8 @@
   "homepage": "https://github.com/mattpeyton/packing_list#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "mongoose": "^4.11.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

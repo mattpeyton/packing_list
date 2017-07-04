@@ -79,6 +79,21 @@ body {
   background-color: #66D640;
 }
 
+#cancelNewListForm {
+  background-color: #F2636D;
+  color: white;
+  border-radius: 5px;
+  padding: 3px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+#cancelNewListForm:hover {
+  background-color: #F51B29;
+}
+
+
+
 .listMenuContainer {
   text-align: center;
   width: 92vw;

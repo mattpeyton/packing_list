@@ -2,14 +2,6 @@ const router = require('express').Router();
 const mongoose = require('mongoose');
 
 
-const LISTS = [
-  {id: '1', title: 'Orlando', description: 'vacation 2017'},
-  {id: '2', title: 'Doctor', description: 'ouch, shots'},
-  {id: '3', title: "Grandma's", description: 'cookies?'},
-  {id: '4', title: 'Dog Show', description: 'biscuit'},
-  {id: '5', title: 'Swim Gear', description: 'to swim with'}
-];
-
 router.get('/lists', function(req, res, next){
   mongoose.model('Lists').find({}, function(err, lists) {
     if(err) {
@@ -33,12 +25,18 @@ router.get('/lists/:listId', function(req, res, next) {
 });
 
 router.post('/lists', function(req, res, next) {
-  const newId = '' + LISTS.length;
-  const data = req.body;
-  data.id = newId;
+  const List = mongoose.model("Lists");
+  const listData = {
+    title: req.body.title,
+  };
 
-  LISTS.push(data);
-  res.status(201).json(data);
+  List.create(listData, function(err, newList){
+    if(err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+    res.json(newList)
+  })
 });
 
 router.put('/lists/:listId', function(req, res, next) {
