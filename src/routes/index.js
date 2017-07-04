@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const mongoose = require('mongoose');
+
 
 const LISTS = [
   {id: '1', title: 'Orlando', description: 'vacation 2017'},
@@ -9,8 +11,15 @@ const LISTS = [
 ];
 
 router.get('/lists', function(req, res, next){
-  res.json(LISTS);
+  mongoose.model('Lists').find({}, function(err, lists) {
+    if(err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+    res.json(lists);
+  });
 });
+
 
 router.get('/lists/:listId', function(req, res, next) {
   const {listId} = req.params;

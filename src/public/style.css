@@ -53,6 +53,32 @@ body {
   flex: 1;
 }
 
+#newListAdd {
+  background-color: lightblue;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#newListForm {
+  margin: 20px;
+  display: none;
+}
+
+#newListSubmitButton {
+  background-color: #A1D490;
+  border-radius: 5px;
+  color: white;
+  padding: 3px;
+  cursor: pointer;
+  margin: 4px 0 4px 0;
+}
+
+#newListSubmitButton:hover {
+  background-color: #66D640;
+}
+
 .listMenuContainer {
   text-align: center;
   width: 92vw;

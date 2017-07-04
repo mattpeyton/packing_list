@@ -1,15 +1,17 @@
+const path = require('path');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const express = require('express');
 const config = require('./config');
-const path = require('path');
+const router = require('./routes');
+
+mongoose.connect(`mongodb://${config.db.host}/${config.db.dbName}`);
+require('./models/lists.model.js');
 const app = express();
 const publicPath = path.resolve(__dirname, './public');
-const router = require('./routes');
-const bodyParser = require('body-parser');
 
 app.use(express.static(publicPath));
-
 app.use(bodyParser.json());
-
 app.use('/api', router);
 
 app.listen(config.port, function(){
