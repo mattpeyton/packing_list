@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+body {
+  font-family: 'Slabo 27px', serif;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+/*Navigation Top Bar*/
+
+.nav {
+  height: 35px;
+  text-align: right;
+}
+
+.menuContainer {
+  margin-right: 10px;
+  padding-top: 4px;
+}
+
+.listDropButton {
+  font-size: 20px;
+  color: navy;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.listDropButton:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+/* ---------- index.html styles  -------------- */
+
+.hero {
+  display: flex;
+  text-align: center;
+
+}
+
+.heroText {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 37px;
+  color: navy;
+  padding: 50px 5px 50px 5px;
+  flex: 1;
+}
+
+.listMenuContainer {
+  text-align: center;
+  width: 92vw;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.listButtonContainer {
+  width: 95%;
+  text-decoration: none;
+  display: block;
+  color: white;
+  background-color: darkgray;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 150px;
+  font-size: 30px;
+  vertical-align: middle;
+  border-radius: 10px;
+  height: 150px;
+  transition: all 0.5s ease-in-out;
+  margin-top: 10px;
+}
+
+.listButtonContainer:hover {
+  background: lightblue;
+  box-shadow: 3px 3px 10px 1px lightgray;
+
+}
+
+/** ------------ individual list page styling  --------------- **/
+
+.listContainer {
+  width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding-bottom: 50px;
+
+}
+
+.sectionHeader {
+  text-align: left;
+  margin-top: 30px;
+}
+
+/* ------- Standard Item Styling ----------- */
+
+.listItem {
+  display: flex;
+  width: 100%;
+  flex:1;
+  flex-direction: column;
+  background-color: lightgray;
+  text-align: left;
+  margin-top: 10px;
+  min-height: 65px;
+}
+
+.checkAndTextContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.listItemText {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  width: (100% - 60px);
+  padding: 5px;
+  min-height:60px;
+
+}
+
+.listItemText p {
+  color: black;
+}
+
+.checkboxContainer{
+  height: 35px;
+  width: 100%;
+  background-color: #cce6ff;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.checkboxContainer:hover {
+  cursor: pointer;
+  background-color: #66b3ff;
+}
+
+
+.buttonsContainer {
+  height: 35px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.itemButtonContainer {
+  height: 100%;
+}
+
+.editButtonContainer {
+  background-color: #ffffcc;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+}
+
+.editButtonContainer:hover {
+  cursor: pointer;
+  background-color: #ffff99;
+}
+
+
+.removeButtonContainer {
+  background-color: #ff9999;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+}
+
+.removeButtonContainer:hover {
+  cursor: pointer;
+  background-color: #ff8080;
+}
+
+.addButtonContainer {
+  background-color: #ccffcc;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+.addButtonContainer:hover {
+  cursor: pointer;
+  background-color: #80ff80;
+}
+
+/* ------- New List Item Styling ----------- */
+
+
+
+.newListItemText {
+  align-items: center;
+}
+
+.newListItemText input {
+  width: 95%;
+}
+
+
+/* ------- Completed List Item Styling ----------- */
+
+.completedListItem {
+
+}
+
+.completedListItemText {
+  color: darkgray;
+}
+
+/* ---------- media queries ----------------*/
+
+
+@media screen and (min-width:  321px) {
+  .listMenuContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 90vw;
+  }
+
+  .listButtonContainer {
+    width: 43%;
+  }
+
+}
+
+@media screen and (min-width:  768px) {
+  .listMenuContainer {
+    width: 80vw;
+  }
+
+  .listButtonContainer {
+    width: 29%;
+  }
+
+  .listItem {
+    flex-direction: row;
+    min-height: 65px;
+  }
+
+  .checkboxContainer {
+    flex:1;
+    height: 100%;
+  }
+
+  .listItemText {
+    flex: 7;
+  }
+
+  .checkAndTextContainer {
+    flex-direction: row;
+    flex: 3;
+  }
+
+  .buttonsContainer {
+    flex: 1;
+    height: inherit;
+  }
+
+  .checkboxContainer p {
+    padding: 4px;
+  }
+}
+
+@media screen and (min-width:  1224px) {
+  .checkboxContainer {
+    padding: 0 5px 0 5px;
+  }
+
+
+  .checkAndTextContainer {
+    flex: 4;
+  }
+
+  .buttonsContainer {
+    flex: 1;
+  }
+}
