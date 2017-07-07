@@ -23,6 +23,7 @@
         <h3>+ Add a New List</h3>
       </div>
       <form id="newListForm">
+        <input type="hidden" id="list-id" vaue=""  />
         <label for="listName">Name of List</label>
         <input type="text" id="listName" name="listName" placeholder="ex:Business Trip" />
         <button id="newListSubmitButton" onclick="submitNewList()">Create List</button>
@@ -37,9 +38,19 @@
   <script src="/js/app.js"></script>
   <script id="listButtonsTemplate" type="text/x-handlebars-template">
     {{#each lists}}
-      <a href='{{title}}.html' class="listButtonContainer"><div class="listTitle">
-        {{title}}
-      </div></a>
+      <a href='{{title}}.html' class="listButtonContainer">
+        <div class='listCloseBox'>
+          <p>
+            X
+          </p>
+        </div>
+        <div class="listTitle">
+          {{title}}
+        </div>
+
+      </a>
+      <button onclick="editPop()">Edit</button>
+
     {{/each}}
   </script>
   <script>

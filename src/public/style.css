@@ -103,14 +103,13 @@ body {
 }
 
 .listButtonContainer {
+  position: relative;
   width: 95%;
-  text-decoration: none;
   display: block;
   color: white;
   background-color: darkgray;
   text-align: center;
   margin: 0 auto;
-  line-height: 150px;
   font-size: 30px;
   vertical-align: middle;
   border-radius: 10px;
@@ -119,9 +118,37 @@ body {
   margin-top: 10px;
 }
 
-.listButtonContainer:hover {
+.listTitle {
+  text-decoration: none;
+  color: white;
+  line-height: 150px;
+  display: inline-block;
+  position: relative;
+
+}
+
+.listCloseBox {
+  background-color: #525454;
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  border-radius: 0 10px 0 0;
+}
+
+.listCloseBox:hover {}
+
+.listCloseBox p {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.listButtonContainer:hover:not(child1) {
   background: lightblue;
   box-shadow: 3px 3px 10px 1px lightgray;
+  cursor: pointer;
 
 }
 

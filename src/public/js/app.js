@@ -1,7 +1,6 @@
 function getLists(){
   return $.ajax('/api/lists')
     .then(res =>{
-      console.log("Results from getLists()", res);
       return res;
     })
     .fail(err => {
@@ -16,6 +15,9 @@ function refreshButtons(){
 
   getLists()
     .then(lists => {
+
+    window.listOfLists = lists;
+
     const data = {lists: lists};
     const html = compiledList(data);
     $('.listMenuContainer').html(html);
@@ -33,6 +35,28 @@ $("#cancelNewListForm").click(function(event){
   $("#newListForm").hide();
 })
 
+function editPop(id) {
+
+  /* OPEN AN EDITING POP UP */
+
+  console.log("I am clicked");
+  const list = window.listOfLists.find(list => list._id === id);
+  if(list) {
+    $()
+    console.log('We are editing the file', list);
+  } else {
+    console.log('Uh oh....I could not find that id', id);
+  }
+}
+
+/*  $$$$ THIS NEEDS TO BE FIXED $$$$$$
+
+$(".listButtonContainer").hover(function(e){
+  if(e.target === this) {
+    style = hover effect
+  }
+
+})*/
 
 function submitNewList() {
   const title = $("#listName").val();
