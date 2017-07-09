@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 
 router.get('/lists', function(req, res, next){
-  mongoose.model('Lists').find({}, function(err, lists) {
+  mongoose.model('Lists').find({deleted: {$ne: true}}, function(err, lists) {
     if(err) {
       console.log(err);
       res.status(500).json(err);
@@ -60,7 +60,23 @@ router.put('/lists/:listId', function(req, res, next) {
 });
 
 router.delete('/lists/:listId', function(req, res, next) {
-  res.end(`Delete list '${req.params.listId}'`);
+  const List = mongoose.model('Lists');
+  const listId = req.params.listId;
+
+  List.findById(listId, function(err, list){
+    if (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+    if (!list) {
+      return res.status(404).json({message: "List not found, ya dummy"});
+    }
+    list.deleted = true;
+
+    list.save(function(err, deletedList){
+      res.json(deletedList);
+    })
+  })
 });
 
 router.get('/lists/:listId', function(req, res, next) {

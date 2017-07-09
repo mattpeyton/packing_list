@@ -129,16 +129,19 @@ body {
 
 .listCloseBox {
   background-color: #525454;
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   display: block;
-  position: absolute;
+  font-size: 20px;
+/*  position: absolute;
   right: 0;
   text-align: center;
-  border-radius: 0 10px 0 0;
+  border-radius: 0 10px 0 0;*/
 }
 
-.listCloseBox:hover {}
+.listCloseBox:hover {
+  cursor: crosshair;
+}
 
 .listCloseBox p {
   font-size: 18px;

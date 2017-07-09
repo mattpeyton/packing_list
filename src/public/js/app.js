@@ -32,6 +32,7 @@ $("#newListAdd").click(function(){
 
 $("#cancelNewListForm").click(function(event){
   event.preventDefault();
+  clearForm();
   $("#newListForm").hide();
 })
 
@@ -42,7 +43,7 @@ function setFormData(data) {
     title: data.title || "",
     _id: data._id || "",
   };
-  $("#listName").val(list.title);
+  $("#changeOfList").val(list.title);
   $("#list-id").val(list._id);
 }
 
@@ -52,26 +53,27 @@ function clearForm() {
 
 function editListPop(id) {
   $(".editListModal").show();
-  $(".closeEditList").click(function(){
-    $(".editListModal").hide();
-  });
-
   const list = window.listOfLists.find(list => list._id === id);
   if(list) {
     setFormData(list);
   };
+  $(".closeEditList").click(function(){
+    $(".editListModal").hide();
+    clearForm();
+})
 }
 
-/*  $$$$ THIS NEEDS TO BE FIXED $$$$$$
 
-I need the hover effects only on the parent. If I hover over child, it should not trigger parent hover effect
+$(".listCloseBox").hover(function(e){
+  e.stopPropagation();
+})
 
-$(".listButtonContainer").hover(function(e){
-  if(e.target === this) {
-    style = hover effect
-  }
+$(".listCloseBox").click(function(e){
+  deleteList();
+  e.stopPropagation();
+})
 
-})*/
+
 
 
 
@@ -101,7 +103,7 @@ function submitListNameChange(){
 function submitNewList() {
   const title = $("#listName").val();
   const listData = {
-    title: title
+    title: newTitle
   }
 
   $.ajax({
@@ -115,4 +117,23 @@ function submitNewList() {
       refreshButtons();
       $("#newListForm").toggle();
     })
+}
+
+
+function deleteList(id){
+  if (confirm("Are you sure?")){
+    $.ajax({
+      type: "DELETE",
+      url: '/api/lists/' + id,
+      dataType: 'json',
+      contentType: 'application/json',
+    })
+    .done(function(response){
+      console.log("List", id, "will be gone 'forever'");
+      refreshButtons();
+    })
+    .fail(function(err){
+      console.log("This list is still hangin' around", err);
+    })
+  }
 }

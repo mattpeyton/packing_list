@@ -48,15 +48,15 @@
   <script id="listButtonsTemplate" type="text/x-handlebars-template">
     {{#each lists}}
       <a href='{{title}}.html' class="listButtonContainer">
-        <div class='listCloseBox'>
-          &times;
-        </div>
         <div class="listTitle">
           {{title}}
         </div>
 
       </a>
       <button onclick="editListPop('{{_id}}')">Edit</button>
+      <div class='listCloseBox' onclick="deleteList('{{_id}}')">
+        &times;
+      </div>
 
     {{/each}}
   </script>
