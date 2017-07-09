@@ -35,21 +35,36 @@ $("#cancelNewListForm").click(function(event){
   $("#newListForm").hide();
 })
 
-function editPop(id) {
+function setFormData(data) {
+  data = data || {};
 
-  /* OPEN AN EDITING POP UP */
+  const list = {
+    title: data.title || "",
+    _id: data._id || "",
+  };
+  $("#listName").val(list.title);
+  $("#list-id").val(list._id);
+}
 
-  console.log("I am clicked");
+function clearForm() {
+  setFormData({});
+}
+
+function editListPop(id) {
+  $(".editListModal").show();
+  $(".closeEditList").click(function(){
+    $(".editListModal").hide();
+  });
+
   const list = window.listOfLists.find(list => list._id === id);
   if(list) {
-    $()
-    console.log('We are editing the file', list);
-  } else {
-    console.log('Uh oh....I could not find that id', id);
-  }
+    setFormData(list);
+  };
 }
 
 /*  $$$$ THIS NEEDS TO BE FIXED $$$$$$
+
+I need the hover effects only on the parent. If I hover over child, it should not trigger parent hover effect
 
 $(".listButtonContainer").hover(function(e){
   if(e.target === this) {
@@ -57,6 +72,31 @@ $(".listButtonContainer").hover(function(e){
   }
 
 })*/
+
+
+
+function submitListNameChange(){
+  console.log("you clicked submit")
+  const listData = {
+    title: $("#changeOfList").val(),
+    _id: $("#list-id").val()
+  };
+  $.ajax ({
+    method:"PUT",
+    url: '/api/lists/' + listData._id,
+    data: JSON.stringify(listData),
+    dataType: 'json',
+    contentType: 'application/json'
+  })
+  .done(function(response){
+    clearForm();
+    refreshButtons();
+    $('.editListModal').hide();
+  })
+  .fail(function(error){
+    console.log("Oh NO!!! Editing FAIL", error);
+  })
+}
 
 function submitNewList() {
   const title = $("#listName").val();

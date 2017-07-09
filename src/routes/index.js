@@ -40,13 +40,23 @@ router.post('/lists', function(req, res, next) {
 });
 
 router.put('/lists/:listId', function(req, res, next) {
-  const {listId} = req.params;
-  const list = LISTS.find(entry => entry.id === listId);
-  if(!list) {
-    return res.status(404).end(`Could not find list '${listId}'`);
-  }
-  list.title = req.body.title;
-  res.json(file);
+  const List = mongoose.model("Lists");
+  const listId = req.params.listId;
+
+  List.findById(listId, function(err, list){
+    if(err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+    if (!list){
+      return res.status(404).json({text: "file not found"});
+    }
+
+    list.title = req.body.title;
+    list.save(function(err, savedList){
+      res.json(savedList);
+    });
+  })
 });
 
 router.delete('/lists/:listId', function(req, res, next) {

@@ -23,15 +23,24 @@
         <h3>+ Add a New List</h3>
       </div>
       <form id="newListForm">
-        <input type="hidden" id="list-id" vaue=""  />
+        <input type="hidden" id="list-id" value=""  />
         <label for="listName">Name of List</label>
         <input type="text" id="listName" name="listName" placeholder="ex:Business Trip" />
-        <button id="newListSubmitButton" onclick="submitNewList()">Create List</button>
+        <button id="newListSubmitButton" onclick="submitNewList(), clearForm()">Create List</button>
         <button id="cancelNewListForm">Cancel</button>
       </form>
     </div>
     <div class="listMenuContainer">
     </div>
+    <div class="editListModal">
+      <div class="editListWindow">
+        <span class="closeEditList">&times;</span>
+        <h3>Change List Name</h3>
+        <input type="text" id="changeOfList" placeholder="Updated List Name" />
+        <button onclick="submitListNameChange();">Save</button>
+      </div>
+    </div>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
@@ -40,16 +49,14 @@
     {{#each lists}}
       <a href='{{title}}.html' class="listButtonContainer">
         <div class='listCloseBox'>
-          <p>
-            X
-          </p>
+          &times;
         </div>
         <div class="listTitle">
           {{title}}
         </div>
 
       </a>
-      <button onclick="editPop()">Edit</button>
+      <button onclick="editListPop('{{_id}}')">Edit</button>
 
     {{/each}}
   </script>
