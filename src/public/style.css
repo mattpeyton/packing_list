@@ -8,7 +8,6 @@ a {
 }
 body {
   font-family: 'Slabo 27px', serif;
-  padding: 0;
   text-align: center;
   width: 100%;
 }
@@ -96,6 +95,7 @@ body {
 
 .listMenuContainer {
   text-align: center;
+  padding-bottom: 30px;
   width: 92vw;
   height: 500px;
   margin: 0 auto;
@@ -105,18 +105,47 @@ body {
 .listButtonContainer {
   position: relative;
   width: 95%;
-  display: block;
-  color: white;
-  background-color: darkgray;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
-  font-size: 30px;
-  vertical-align: middle;
-  border-radius: 10px;
-  height: 150px;
-  transition: all 0.5s ease-in-out;
+  height: 200px;
+
   margin-top: 10px;
 }
+
+.listButton {
+  color: white;
+  background-color: darkgray;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 30px;
+  border-radius: 10px 10px 0 0 ;
+  height: 150px;
+}
+
+.changeButtonsContainer {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.editButton {
+  width: 50%;
+  height: 100%;
+  font-size: 20px;
+  line-height: 50px;
+  background-color: #EDEDA6;
+  border-radius: 0 0 0 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.editButton:hover {
+  cursor: pointer;
+  background-color: #F7F379;
+}
+
 
 .listTitle {
   text-decoration: none;
@@ -129,18 +158,18 @@ body {
 
 .listCloseBox {
   background-color: #525454;
-  width: 15px;
-  height: 15px;
-  display: block;
+  width: 50%;
+  height: 100%;
   font-size: 20px;
-/*  position: absolute;
-  right: 0;
-  text-align: center;
-  border-radius: 0 10px 0 0;*/
+  border-radius: 0 0 10px 0;
+  line-height: 50px;
+  transition: all 0.5s ease-in-out;
+
 }
 
 .listCloseBox:hover {
-  cursor: crosshair;
+  cursor: pointer;
+  background-color: #ff8080;
 }
 
 .listCloseBox p {
@@ -148,7 +177,7 @@ body {
   line-height: 30px;
 }
 
-.listButtonContainer:hover:not(child1) {
+.listButton:hover {
   background: lightblue;
   box-shadow: 3px 3px 10px 1px lightgray;
   cursor: pointer;
@@ -255,6 +284,19 @@ body {
   background-color: #66b3ff;
 }
 
+.editItemButtonContainer {
+  background-color: #ffffcc;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+}
+
+.editItemButtonContainer:hover {
+  cursor: pointer;
+  background-color: #ffff99;
+}
 
 .buttonsContainer {
   height: 35px;
@@ -267,7 +309,7 @@ body {
   height: 100%;
 }
 
-.editButtonContainer {
+.ButtonContainer {
   background-color: #ffffcc;
   display: flex;
   justify-content: center;
@@ -276,7 +318,7 @@ body {
   width: 50%;
 }
 
-.editButtonContainer:hover {
+.ButtonContainer:hover {
   cursor: pointer;
   background-color: #ffff99;
 }
@@ -346,9 +388,7 @@ body {
     width: 90vw;
   }
 
-  .listButtonContainer {
-    width: 43%;
-  }
+
 
 }
 
@@ -358,8 +398,9 @@ body {
   }
 
   .listButtonContainer {
-    width: 29%;
+    width: 43%;
   }
+
 
   .listItem {
     flex-direction: row;
@@ -402,5 +443,9 @@ body {
 
   .buttonsContainer {
     flex: 1;
+  }
+
+  .listButtonContainer {
+    width: 29%;
   }
 }

@@ -101,7 +101,7 @@ function submitListNameChange(){
 }
 
 function submitNewList() {
-  const title = $("#listName").val();
+  const newTitle = $("#listName").val();
   const listData = {
     title: newTitle
   }
@@ -115,6 +115,8 @@ function submitNewList() {
   })
     .done(function(response){
       refreshButtons();
+      clearForm({});
+      console.log("IT CLICKED")
       $("#newListForm").toggle();
     })
 }
