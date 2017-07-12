@@ -78,7 +78,6 @@ $(".listCloseBox").click(function(e){
 
 
 function submitListNameChange(){
-  console.log("you clicked submit")
   const listData = {
     title: $("#changeOfList").val(),
     _id: $("#list-id").val()

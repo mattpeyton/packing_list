@@ -21,7 +21,6 @@ router.get('/lists/:listId', function(req, res, next) {
     return res.status(404).end(`Could not find list '${listId}'`);
   } else {
     const list = lists.listId;
-    res.render('post');
   }
 
   res.json(list);
