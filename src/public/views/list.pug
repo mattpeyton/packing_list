@@ -1,0 +1,86 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset='UTF-8')
+    link(rel='stylesheet', type='text/css', href='../normalize.css')
+    link(rel='stylesheet', type='text/css', href='../style.css')
+    link(href='https://fonts.googleapis.com/css?family=Slabo+27px', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Permanent+Marker', rel='stylesheet')
+  body
+    .nav
+      .menuContainer
+        span.listDropButton About
+        a(href='index.html')
+          span.listDropButton Home
+        span.listDropButton Log In
+    .hero
+      .heroText #{listTitle}
+    .listContainer
+      h3.sectionHeader Unpacked Items
+      .listItem
+        .checkAndTextContainer
+          .checkboxContainer
+            p
+              | Mark it Packed?
+          .listItemText
+            p
+        .buttonsContainer
+          .itemButtonContainer.editItemButtonContainer
+            p
+              | Edit
+          .itemButtonContainer.removeButtonContainer
+            p
+              | Delete
+      .listItem
+        .checkAndTextContainer
+          .checkboxContainer
+            p
+              | Mark it Packed?
+          .listItemText
+            p
+              | An Item that has a really long name just to see what happens
+        .buttonsContainer
+          .itemButtonContainer.editItemButtonContainer
+            p
+              | Edit
+          .itemButtonContainer.removeButtonContainer
+            p
+              | Delete
+      // -new list item--
+      h3.sectionHeader Add an Item
+      .listItem.newListItem
+        .listItemText.newListItemText
+          input(type='text', placeholder='New Item')
+        .buttonsContainer
+          .itemButtonContainer.addButtonContainer
+            p
+              | Add
+      // -Completed list--
+      h3.sectionHeader Packed Items
+      .listItem.completedListItem
+        .listItemText.completedListItemText
+          p
+            | An Item has been packed and it has a really long name that might screw a lot of things up
+        .buttonsContainer
+          .checkboxContainer
+            p
+              | Oops, unpack
+      .listItem.completedListItem
+        .listItemText.completedListItemText
+          p
+            | An Item has been packed and it has a really long name that might screw a lot of things up
+        .buttonsContainer
+          .checkboxContainer
+            p
+              | Oops, unpack
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js')
+    script.
+      $(document).ready(function() {
+      const data = { text: "This is an item that has an absurdly long name that is totally unnecessary" };
+      const itemTemplate = '{{text}}';
+      const itemCompiled = Handlebars.compile(itemTemplate);
+      const itemRendered = itemCompiled(data);
+      $('.listItemText p').first().after(itemRendered);
+      });

@@ -13,11 +13,12 @@ body {
 }
 
 /*Navigation Top Bar*/
-
+/*
 .nav {
   height: 35px;
   text-align: right;
 }
+
 
 .menuContainer {
   margin-right: 10px;
@@ -35,6 +36,7 @@ body {
   background-color: lightgray;
   cursor: pointer;
 }
+*/
 
 /* ---------- index.html styles  -------------- */
 
@@ -52,6 +54,7 @@ body {
   flex: 1;
 }
 
+/*Add a new list*/
 #newListAdd {
   background-color: lightblue;
   display: inline-block;
@@ -92,7 +95,7 @@ body {
 }
 
 
-
+/*Container of all list buttons*/
 .listMenuContainer {
   text-align: center;
   padding-bottom: 30px;
@@ -102,6 +105,7 @@ body {
   margin-top: 10px;
 }
 
+/*Individual Buttons styling*/
 .listButtonContainer {
   position: relative;
   width: 95%;
@@ -109,7 +113,6 @@ body {
   flex-direction: column;
   margin: 0 auto;
   height: 200px;
-
   margin-top: 10px;
 }
 
@@ -221,6 +224,16 @@ body {
 
 .listContainer {
   width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding-bottom: 50px;
+
+}
+
+.itemsContainer {
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -379,6 +392,8 @@ body {
 
 
 @media screen and (min-width:  321px) {
+
+  /*Move flex direction to row*/
   .listMenuContainer {
     display: flex;
     flex-wrap: wrap;
@@ -387,12 +402,11 @@ body {
     justify-content: space-between;
     width: 90vw;
   }
-
-
-
 }
 
 @media screen and (min-width:  768px) {
+
+  /*Index.html styling*/
   .listMenuContainer {
     width: 80vw;
   }
@@ -401,7 +415,7 @@ body {
     width: 43%;
   }
 
-
+  /*Individual list page styling*/
   .listItem {
     flex-direction: row;
     min-height: 65px;
@@ -432,6 +446,7 @@ body {
 }
 
 @media screen and (min-width:  1224px) {
+  /*Individual list page styling*/
   .checkboxContainer {
     padding: 0 5px 0 5px;
   }

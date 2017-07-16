@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   </head>
   <body>
+
+    <!--Dynamic nav menu to be added -->
     <div class="nav">
       <!--<div class="menuContainer">
         <span class="listDropButton">About</span>
@@ -18,20 +20,27 @@
     <div class="hero">
       <div class="heroText">Packing List App</div>
     </div>
+
+
     <div class="createNewList">
+      <!--Button to add a new list -->
       <div id="newListAdd">
         <h3>+ Add a New List</h3>
       </div>
+
+      <!--Initially hidden form to show when user clicks above button to add new list -->
       <form id="newListForm">
         <input type="hidden" id="list-id" value=""  />
         <label for="listName">Name of List</label>
         <input type="text" id="listName" name="listName" placeholder="ex:Business Trip" />
-        <button id="newListSubmitButton" onclick="submitNewList(); clearForm();">Create List</button>
+        <button id="newListSubmitButton" onclick="submitNewList();">Create List</button>
         <button id="cancelNewListForm">Cancel</button>
       </form>
     </div>
     <div class="listMenuContainer">
     </div>
+
+    <!--Hidden modal that will show when user edits a given list name-->
     <div class="editListModal">
       <div class="editListWindow">
         <span class="closeEditList">&times;</span>
@@ -45,10 +54,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
   <script src="/js/app.js"></script>
+
+  <!--Handlebars template for list buttons-->
   <script id="listButtonsTemplate" type="text/x-handlebars-template">
     {{#each lists}}
     <div class="listButtonContainer">
-      <a href='{{title}}.html' class="listButton">
+      <a href="lists/{{_id}}.html" class="listButton">
         <div class="listTitle">
           {{title}}
         </div>
@@ -62,6 +73,8 @@
 
     {{/each}}
   </script>
+
+  <!--Function that fetches and displays current lists in the database upon page load -->
   <script>
     $(document).ready(function(){
       refreshButtons();
