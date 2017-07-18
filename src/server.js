@@ -33,9 +33,9 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, '/public/views'));
 
 //Get (read/view) individual list
-app.get('/lists/:listId', function(req, res){
-  res.sendFile("list.html", {root: path.join(__dirname, '../src/public/views')})
-})
+// app.get('/lists/:listId', function(req, res){
+//   res.sendFile("list.html", {root: path.join(__dirname, '../src/public/views')})
+// })
 
 //Firing up the server
 app.listen(config.port, function(){

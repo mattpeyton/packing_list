@@ -130,7 +130,7 @@ function submitNewList() {
   //When the request is finished refresh the list buttons, clear the form, and hide the add list form
     .done(function(response){
       refreshButtons();
-      clearForm({});
+      $('#listName').val('')
       $("#newListForm").toggle();
     })
 }
@@ -156,3 +156,8 @@ function deleteList(id){
     })
   }
 }
+//Catching the submit new List click event and connecting it to submitNewList function
+$('#newListSubmitButton').click(function(e) {
+  e.preventDefault();
+  submitNewList();
+})

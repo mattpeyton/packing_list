@@ -19,22 +19,11 @@ router.get('/lists', function(req, res, next){
 });
 
 
-// router.get('/lists/:listId', function(req, res, next) {
-//   const {listId} = req.params;
-//   const {listTitle} = req.params;
-//
-//   const list = LISTS.find(entry => entry.id === listId,
-//                                   entry.title === title);
-//   if(!list) {
-//     return res.status(404).end(`Could not find list '${listId}'`);
-//   } else {
-//     const list = lists.listId;
-//   }
-//
-//   res.json(list);
-// });
+router.get('/lists/:listId', function(req, res, next) {
+  res.sendFile("list.html", {root: path.join(__dirname, '../src/public/views')}
+});
 
-//Post a new list document
+//POST request - add a new list document
 router.post('/lists', function(req, res, next) {
   //We'll be using that "Lists" model, of course
   const List = mongoose.model("Lists");
