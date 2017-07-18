@@ -20,7 +20,7 @@ router.get('/lists', function(req, res, next){
 
 
 router.get('/lists/:listId', function(req, res, next) {
-  res.sendFile("list.html", {root: path.join(__dirname, '../src/public/views')}
+  res.sendFile("list.html", {root: path.join(__dirname, '../src/public/views')});
 });
 
 //POST request - add a new list document

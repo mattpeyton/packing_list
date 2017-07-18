@@ -95,6 +95,22 @@ body {
   background-color: #F51B29;
 }
 
+.colorPalette {
+  height: 20px;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.colorSquare {
+  height: 15px;
+  width: 15px;
+}
+
+.colorSquare.selected {
+  border: 3px black;
+}
 
 /*Container of all list buttons*/
 .listMenuContainer {

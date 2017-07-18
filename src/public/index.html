@@ -29,13 +29,22 @@
       </div>
 
       <!--Initially hidden form to show when user clicks above button to add new list -->
-      <form id="newListForm">
-        <input type="hidden" id="list-id" value=""  />
-        <label for="listName">Name of List</label>
-        <input type="text" id="listName" name="listName" placeholder="ex:Business Trip" />
-        <button id="newListSubmitButton">Create List</button>
-        <button id="cancelNewListForm">Cancel</button>
-      </form>
+      <div id="newListForm">
+        <form>
+          <input type="hidden" id="list-id" value=""  />
+          <label for="listName">Name of List</label>
+          <input type="text" id="listName" name="listName" placeholder="ex:Business Trip" />
+          <button id="newListSubmitButton">Create List</button>
+          <button id="cancelNewListForm">Cancel</button>
+        </form>
+        <div class="colorPalette">
+          <div class="colorSquare" style="background-color:coral"></div>
+          <div class="colorSquare selected" style="background-color:green"></div>
+          <div class="colorSquare" style="background-color:orange"></div>
+          <div class="colorSquare" style="background-color:purple"></div>
+          <div class="colorSquare" style="background-color:lightblue"></div>
+        </div>
+      </div>
     </div>
     <div class="listMenuContainer">
     </div>
