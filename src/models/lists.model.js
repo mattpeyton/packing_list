@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const ListsSchema = new mongoose.Schema({
   title: String,
   id: Number,
+  cardColor: String,
   created_at: {type: Date, default: Date.now},
   deleted: {type: Boolean, default: false}
 });

@@ -34,16 +34,22 @@
           <input type="hidden" id="list-id" value=""  />
           <label for="listName">Name of List</label>
           <input type="text" id="listName" name="listName" placeholder="ex:Business Trip" />
+          <div>
+            Select a color
+          </div>
+            <div class="colorPalette">
+              <div class="colorSquare" style="background-color:coral"></div>
+              <div class="colorSquare" style="background-color:green"></div>
+              <div class="colorSquare" style="background-color:orange"></div>
+              <div class="colorSquare" style="background-color:purple"></div>
+              <div class="colorSquare" style="background-color:lightblue"></div>
+              <div class="colorSquare" style="background-color:lightgray"></div>
+            </div>
           <button id="newListSubmitButton">Create List</button>
           <button id="cancelNewListForm">Cancel</button>
+
         </form>
-        <div class="colorPalette">
-          <div class="colorSquare" style="background-color:coral"></div>
-          <div class="colorSquare selected" style="background-color:green"></div>
-          <div class="colorSquare" style="background-color:orange"></div>
-          <div class="colorSquare" style="background-color:purple"></div>
-          <div class="colorSquare" style="background-color:lightblue"></div>
-        </div>
+
       </div>
     </div>
     <div class="listMenuContainer">
@@ -52,10 +58,21 @@
     <!--Hidden modal that will show when user edits a given list name-->
     <div class="editListModal">
       <div class="editListWindow">
-        <span class="closeEditList">&times;</span>
-        <h3>Change List Name</h3>
+
+        <h2>Edit the List</h2>
+        <label id="editListTitleLabel" for="changeOfList">Title</label>
         <input type="text" id="changeOfList" placeholder="Updated List Name" />
-        <button onclick="submitListNameChange();">Save</button>
+        <h3>Color</h3>
+        <div class="editColorPalette">
+          <div class="editColorSquare" style="background-color:coral"></div>
+          <div class="editColorSquare" style="background-color:green"></div>
+          <div class="editColorSquare" style="background-color:orange"></div>
+          <div class="editColorSquare" style="background-color:purple"></div>
+          <div class="editColorSquare" style="background-color:lightblue"></div>
+          <div class="editColorSquare" style="background-color:lightgray"></div>
+        </div>
+        <button id="editConfirmButton" onclick="submitListNameChange();">Save</button>
+        <div class="closeEditList">Cancel</div>
       </div>
     </div>
 
@@ -68,11 +85,10 @@
   <script id="listButtonsTemplate" type="text/x-handlebars-template">
     {{#each lists}}
     <div class="listButtonContainer">
-      <a href="lists/{{_id}}.html" class="listButton">
+      <a href="lists/{{_id}}.html" class="listButton" style="background-color:{{cardColor}}">
         <div class="listTitle">
           {{title}}
         </div>
-
       </a>
       <div class="changeButtonsContainer">
         <div class="editButton" onclick="editListPop('{{_id}}')">Edit</div>

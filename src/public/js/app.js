@@ -90,7 +90,8 @@ function submitListNameChange(){
   //Grab the form data values and assign them as properties of listData const
   const listData = {
     title: $("#changeOfList").val(),
-    _id: $("#list-id").val()
+    _id: $("#list-id").val(),
+    cardColor: $(".editColorSquare.selected").css("background-color")
   };
   //send the changes as an HTTP PUT request
   $.ajax ({
@@ -117,7 +118,8 @@ in the newListFrom on index.html*/
 function submitNewList() {
   //Grabbing the values entered into the form and setting them to the listData const
   const listData = {
-    title: $("#listName").val()
+    title: $("#listName").val(),
+    cardColor: $(".colorSquare.selected").css('background-color')
   }
   //sending the data as an HTTP POST request
   $.ajax({
@@ -160,4 +162,12 @@ function deleteList(id){
 $('#newListSubmitButton').click(function(e) {
   e.preventDefault();
   submitNewList();
+})
+
+$('.colorSquare').click(function(){
+  $(this).addClass('selected').siblings().removeClass('selected');
+})
+
+$('.editColorSquare').click(function(){
+  $(this).addClass('selected').siblings().removeClass('selected');
 })

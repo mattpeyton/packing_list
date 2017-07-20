@@ -18,9 +18,9 @@ router.get('/lists', function(req, res, next){
   });
 });
 
-
+//GET individual list
 router.get('/lists/:listId', function(req, res, next) {
-  res.sendFile("list.html", {root: path.join(__dirname, '../src/public/views')});
+  res.sendFile("list.html", {root: path.join(__dirname, './src/public/views')});
 });
 
 //POST request - add a new list document
@@ -30,6 +30,7 @@ router.post('/lists', function(req, res, next) {
   //Creating a new variable and assinging the title of the request's body to it
   const listData = {
     title: req.body.title,
+    cardColor: req.body.cardColor
   };
 
   //creating a document in the List model
@@ -62,6 +63,7 @@ router.put('/lists/:listId', function(req, res, next) {
     }
     //the title of the original list is now changed to the title of of the request
     list.title = req.body.title;
+    list.cardColor = req.body.cardColor;
 
     //save that update to the database and send it back to me in json
     list.save(function(err, savedList){

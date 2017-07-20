@@ -69,6 +69,10 @@ body {
   display: none;
 }
 
+#listName {
+  margin: 10px;
+}
+
 #newListSubmitButton {
   background-color: #A1D490;
   border-radius: 5px;
@@ -95,21 +99,35 @@ body {
   background-color: #F51B29;
 }
 
-.colorPalette {
-  height: 20px;
-  width:100%;
+
+.colorPalette,
+.editColorPalette {
+  min-height: 60px;
+  margin: 0 auto;
+  background-color: lightgray;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px 10px 5px 10px;
+  width: 90%;
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
+.editColorSquare,
 .colorSquare {
-  height: 15px;
-  width: 15px;
+  flex-grow:0;
+  width: calc(100% * (1/3));
+  height: 45px;
+  border: 3px solid white;
+  margin: 5px;
+
 }
 
+.editColorSquare.selected,
 .colorSquare.selected {
-  border: 3px black;
+  border: 3px solid black;
 }
 
 /*Container of all list buttons*/
@@ -223,13 +241,39 @@ body {
   margin: 10% auto;
   padding: 10px;
   background-color: #add8e6;
-  height: 100px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
 }
 
 .closeEditList {
-  float: right;
-  font-size: 30px;
+  font-size: 15px;
   font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#editListTitleLabel {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#changeOfList {
+  width: 80%;
+  max-width: 350px;
+  font-size: 20px;
+  margin: 10px 0 10px 0;
+  font-family: 'Slabo 27px', serif;
+}
+
+#editConfirmButton {
+  width: 80%;
+  max-width: 200px;
+  font-size: 20px;
+  height: 50px;
+  margin: 10px 0 10px 0;
+  font-family: 'Slabo 27px', serif;
 
 }
 
@@ -432,6 +476,14 @@ body {
     width: 43%;
   }
 
+  /*Edit modal*/
+  .colorPalette,
+  .editColorPalette {
+    margin-top: 5px;
+    width: 28%;
+    min-width: 200px;
+  }
+
   /*Individual list page styling*/
   .listItem {
     flex-direction: row;
@@ -464,6 +516,21 @@ body {
 
 @media screen and (min-width:  1224px) {
   /*Individual list page styling*/
+
+  .colorPalette,
+  .editColorPalette {
+    flex-wrap: nowrap;
+  }
+
+  .editColorPalette {
+    width: 40%;
+  }
+
+  .colorSquare,
+  .editColorSquare {
+    width: 45px;
+  }
+
   .checkboxContainer {
     padding: 0 5px 0 5px;
   }
