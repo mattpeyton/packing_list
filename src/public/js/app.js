@@ -164,6 +164,7 @@ $('#newListSubmitButton').click(function(e) {
   submitNewList();
 })
 
+//Marking color square as selected with click and deselecting other colors
 $('.colorSquare').click(function(){
   $(this).addClass('selected').siblings().removeClass('selected');
 })

@@ -8,8 +8,6 @@ a {
 }
 body {
   font-family: 'Slabo 27px', serif;
-  text-align: center;
-  width: 100%;
   padding-bottom: 50px;
 }
 
@@ -56,6 +54,10 @@ body {
 }
 
 /*Add a new list*/
+.createNewList {
+  text-align: center;
+}
+
 #newListAdd {
   background-color: lightblue;
   display: inline-block;
@@ -135,7 +137,7 @@ body {
   text-align: center;
   padding-bottom: 30px;
   width: 92vw;
-  height: 500px;
+  min-height: 100px;
   margin: 0 auto;
   margin-top: 10px;
 }
@@ -155,8 +157,9 @@ body {
   color: white;
   background-color: darkgray;
   transition: all 0.5s ease-in-out;
-  text-align: center;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 30px;
   border-radius: 10px 10px 0 0 ;
   height: 150px;
@@ -188,9 +191,8 @@ body {
 .listTitle {
   text-decoration: none;
   color: white;
-  line-height: 150px;
   display: inline-block;
-  position: relative;
+  margin: 0;
 
 }
 
@@ -333,7 +335,7 @@ body {
   justify-content: center;
   flex-direction: column;
   text-align: left;
-  width: (100% - 60px);
+  width: calc(100% - 60px);
   padding: 5px;
   min-height:60px;
 
@@ -462,6 +464,7 @@ body {
     align-items: flex-start;
     justify-content: space-between;
     width: 90vw;
+    min-height: 100px;
   }
 }
 
