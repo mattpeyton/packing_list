@@ -16,7 +16,7 @@ function getLists(){
 function refreshButtons(){
   //defining template const as the html of #listButtonsTemplate
   const template = $('#listButtonsTemplate').html();
-  //comiling that template in Handlebars and assigning it to the const compiledList
+  //compiling that template in Handlebars and assigning it to the const compiledList
   const compiledList = Handlebars.compile(template);
 
     //Calling getLists within this function
@@ -172,3 +172,29 @@ $('.colorSquare').click(function(){
 $('.editColorSquare').click(function(){
   $(this).addClass('selected').siblings().removeClass('selected');
 })
+
+
+//Populating individual list Page
+function openList(){
+  getLists()
+  .then(lists => {
+    var title = lists.find( function (list) {
+      var location = window.location.pathname;
+      var page_id = location.slice(7, 31);
+      return list._id === page_id;
+    });
+   console.log(title.title);
+   document.getElementById("heroText").innerHTML = title.title;
+    /*
+  //assigning the response array to the listOfLists property on the global window
+  window.listOfLists = lists;
+
+  //saving the lists as the const data
+  const data = {lists: lists};
+  //running that data (lists) through Handlebars
+  const html = compiledList(data);
+  //putting that newly compiled html into index.html
+  $('.listMenuContainer').html(html);
+  */
+})
+}
