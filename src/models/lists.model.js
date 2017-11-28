@@ -7,7 +7,8 @@ const ListsSchema = new mongoose.Schema({
   id: Number,
   cardColor: String,
   created_at: {type: Date, default: Date.now},
-  deleted: {type: Boolean, default: false}
+  deleted: {type: Boolean, default: false},
+  list_item: [{title: String, packed: Boolean, default: false}]
 });
 
 //telling mongoose that the List schema is a model

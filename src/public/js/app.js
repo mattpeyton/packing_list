@@ -183,7 +183,6 @@ function openList(){
       var page_id = location.slice(7, 31);
       return list._id === page_id;
     });
-   console.log(title.title);
    document.getElementById("heroText").innerHTML = title.title;
     /*
   //assigning the response array to the listOfLists property on the global window
